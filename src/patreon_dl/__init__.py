@@ -1,0 +1,1 @@
+"""Python rewrite of PatreonDownloader."""
