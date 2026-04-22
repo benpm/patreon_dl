@@ -1,5 +1,7 @@
 # patreon-dl
 
+![](logo.png)
+
 Download content posted by creators on patreon.com.
 
 You need a valid Patreon account. Free posts are available to any logged-in account. Paid posts only download if you have an active subscription to that creator.

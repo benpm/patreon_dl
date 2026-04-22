@@ -69,7 +69,7 @@ def _make_events() -> Events:
               help="Don't HEAD-check remote file size before downloading")
 @click.option("--remote-browser-address", default=None,
               help="Address of an externally launched Chrome with --remote-debugging-port (e.g. ws://127.0.0.1:9222)")
-@click.option("--use-sub-directories", is_flag=True, default=False,
+@click.option("--use-sub-directories", "is_use_sub_directories", is_flag=True, default=False,
               help="Create a subdirectory per post")
 @click.option("--sub-directory-pattern", default="[%PostId%] %PublishedAt% %PostTitle%",
               help="Pattern for sub-directory names. %PostId%, %PublishedAt%, %PostTitle%")

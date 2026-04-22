@@ -57,7 +57,11 @@ class Downloader:
                 if any(b in low for b in blacklisted):
                     log.debug("Blacklisted, skipping: %s", cu.url)
                     continue
-                if not await processor.process_crawled_url(cu):
+                try:
+                    if not await processor.process_crawled_url(cu):
+                        continue
+                except Exception as ex:  # noqa: BLE001
+                    log.error("Skipping %s — processor error: %s", cu.url, ex)
                     continue
                 kept.append(cu)
 

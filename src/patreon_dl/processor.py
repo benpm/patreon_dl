@@ -78,10 +78,11 @@ class PatreonCrawledUrlProcessor:
             if crawled_url.filename is None:
                 remote_name = await self._retriever.retrieve_remote_file_name(crawled_url.url)
                 if remote_name is None:
-                    raise RuntimeError(
-                        f"[{crawled_url.post_id}] Unable to retrieve name for external entry of type "
-                        f"{crawled_url.url_type}: {crawled_url.url}"
+                    log.error(
+                        "[%s] Unable to resolve filename for %s %s — skipping",
+                        crawled_url.post_id, crawled_url.url_type, crawled_url.url,
                     )
+                    return False
                 filename += f"_{remote_name}"
             else:
                 filename += f"_{crawled_url.filename}"
