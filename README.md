@@ -6,11 +6,18 @@ Download content posted by creators on patreon.com.
 
 You need a valid Patreon account. Free posts are available to any logged-in account. Paid posts only download if you have an active subscription to that creator.
 
-## Requirements
-
-- [uv](https://docs.astral.sh/uv/getting-started/installation/) — all Python management is handled by uv; do not use system Python directly.
-
 ## Installation
+
+### From PyPI (recommended)
+
+```bash
+pip install patreon-dl
+playwright install chromium
+```
+
+> Playwright requires a one-time browser download. The `playwright install chromium` step (~200 MB) is separate from the pip install and must be run once per machine.
+
+### From source (with uv)
 
 ```bash
 git clone <repo>
@@ -19,7 +26,7 @@ uv sync
 uv run playwright install chromium
 ```
 
-That's it. No virtual environment to activate, no `pip install`.
+No virtual environment to activate — `uv run` handles everything.
 
 ## Authentication
 
